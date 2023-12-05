@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="homestyle.css" media="screen">
+    <link rel="stylesheet" href="homestylePrint.css" media="print">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+      @media print{
+        body *{
+          visibility:visible;
+          position:static;
+        }
+        .print-container , .print-container{
+          visibility: visible;
+        }
+        .print-container{
+          position: absolute;
+          left: 0px;
+          top: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color:#cad8d7;">
+    <div class="container">
+    <header>
+      <a href="index.html" style="text-decoration: none;color: white;font-size: 2em;" class="logo">
+        Resume Generator</a>
+      <nav class="navigation me-5">
+          <a href="index.html" style="text-decoration: none;color: white;font-size:100%">Home</a>
+          <a href="#" style=" text-decoration: none;color: white;font-size: 100%;">Contacts</a>
+      </nav>
+      </header>
+    </div>
+    
+
+      <!--1st container begins-->
+    <div class="container"  id="cv-form" style="margin-top: 10%;">
+    <hr>  <!--Row begins-->
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Personal Information</h4>
+          <div class="form-group">
+            <label for="nameField">Your Name:</label>
+            <input
+              type="text"
+              id="nameField"
+              placeholder="Enter your name"
+              class="form-control"
+            />
+          </div>
+            <div class="form-group mt-3">
+              <label for="contactField">Phone number:</label>
+              <input
+                type="tel"
+                id="contactField"
+                placeholder="Enter your number"
+                class="form-control"
+              /></div>
+                <div class="form-group mt-3">
+                  <label for="mailField">Email:</label>
+                  <input
+                    type="email"
+                    id="mailField"
+                    placeholder="Enter here"
+                    class="form-control"></input>
+                </div>
+                <h4 class="text mt-3">Social profile</h4>
+                <div class="form-group mt-3">
+                  <label for="fbField">Facebook:</label>
+                  <input
+                    type="text"
+                    id="fbField"
+                    placeholder="Enter here"
+                    class="form-control"
+                  /></div>
+                  <div class="form-group mt-3">
+                    <label for="instaField">Instagram</label>
+                    <input
+                      type="text"
+                      id="instaField"
+                      placeholder="Enter here"
+                      class="form-control"
+                    /></div>
+                    <div class="form-group mt-3">
+                      <label for="linkedinField">Linkedin:</label>
+                      <input
+                        type="text"
+                        id="linkedinField"
+                        placeholder="Enter here"
+                        class="form-control"
+                      /></div>
+
+            </div>
+          <!--second column begins-->
+        <div class="col-md-6">
+          <div class="form-group mt-2">
+            <label for=""><h4>Objective:</h4></label>
+            <textarea
+              placeholder="Enter here"
+              id="objectiveField"
+              class="form-control"
+              rows="1"></textarea>
+          </div>
+
+          <div class="form-group mt-3" id="aq">
+            <label for=""><h4>Education:</h4></label>
+            <textarea
+              placeholder="Enter here"
+              class="form-control aqField"
+              rows="1"></textarea>
+
+          <div class="container mt-2" id="aqAddButton">
+            <div class="d-grid gap-2">
+              <button onclick="addNewAQField()"  style="background-color:#07525c;" class="btn btn-primary mt-2 " type="button">Add</button>
+            </div>
+          </div>
+            </div>
+
+            <div class="form-group mt-3" id="sk">
+              <label for=""><h4>Skills</h4></label>
+              <textarea
+                placeholder="Enter here"
+                class="form-control skField"
+                rows="1"></textarea>
+
+            <div class="container mt-2" id="skAddButton">
+              <div class="d-grid gap-2">
+                <button onclick="addNewSKField()" style="background-color:#07525c;" class="btn btn-primary mt-2 " type="button">Add</button>
+              </div>
+            </div>
+              </div>
+
+          <div class="form-group mt-3" id="we">
+            <label for=""><h4>Work Experience</h4></label>
+            <textarea
+              placeholder="Enter here"
+              class="form-control weField"
+              rows="1"></textarea>
+
+          <div class="container mt-2" id="weAddButton">
+            <div class="d-grid gap-2">
+              <button onclick="addNewWEField()" style="background-color:#07525c;" class="btn btn-primary mt-2 " type="button">Add</button>
+            </div>
+          </div>
+            </div>
+
+        </div>
+      </div><!--row1 ends-->
+      <!--row2 begins-->
+      <div class="row">
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <br><br>
+            <button onclick="generateResume()" style="background-color: #07525c;color: white;" class="btn btn-primary mt-3" type="button">
+              <a style="text-decoration: none;color: white;" href="#">Generate Resume</a></button>
+            
+        </div>
+      </div><!--row2 ends--><hr><br>
+      </div><!--2nd container ends-->
+      
+      <!--cv template-->
+      <br><br><br><br>
+      <div class="container mt-5">
+        <div class="row">
+      <div class="container print-container text-center mt-5 mb-5" id="cv-template">
+          <div class="row">
+            <!--1st col-->
+            <div class="col-md-4 ">
+                <img src="resume_profile_pic.png" alt="Profile pic" class="img-fluid myimg">
+                <div class="container" style="background-color: transparent;margin: 0%;">
+                <br>  <p>Name:<p id="nameT1">Name</p></p>
+                  <p>Phone:<p id="contactT">Phone number</p></p>
+                  <p>Email:<p id="emailT">Email</p></p>
+                  <br><hr>
+                  <p>Facebook:</p><p id="fbT">Facebook username</p>
+                  Instagram:<p id="instaT">Instagrm username</p>
+                  <p>LinkedIn</p><p id="linkedinT">Linkedin username</p>
+                </div>
+              </div>
+      
+            <!--2nd col-->
+            <div class="col-md-7 me-1 text-center" style="margin-top: 8%;font-weight: 10;">
+              <h1 id="nameT2" style="font-weight: 980;">Name</h1>
+              <hr>
+              <!--Objective card-->
+              <div class="card">
+                <div class="card-header">
+                  <h3 style="background-color: transparent;">Objectives:</h3>
+                </div>
+                <div class="card-body">
+                  <p id="objectiveT">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta eaque fuga laborum sint corrupti earum ducimus eum aliquam officiis omnis, ab quia dignissimos esse tempora sed itaque ipsam iste distinctio aspernatur accusamus amet! Dolor, atque quasi numquam officiis a
+                    dipisci sed iste quam ipsam blanditiis ad odit assumenda tenetur incidunt est.
+                  </p>
+                </div>
+              </div>
+            <hr>
+      
+            <!-- Academic Qualification-->
+            <div class="card">
+              <div class="card-header">
+                <h3>Education</h3>
+              </div>
+              <div class="card-body">
+                <ul id="aqT">
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ut.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ut.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ut.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ut.</li>
+                </ul>
+              </div>
+            </div>
+            <hr>
+            <!--Skills-->
+            <div class="card">
+              <div class="card-header">
+                <h3>Skills</h3>
+              </div>
+              <div class="card-body">
+                <ul id="skT">
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ut.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ut.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ut.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ut.</li>
+                </ul>
+              </div>
+            </div>
+            <hr>
+            <!--Work Experience-->
+            <div class="card">
+              <div class="card-header">
+                <h3>Work Experience:</h3>
+              </div>
+              <div class="card-body">
+                <ul id="weT">
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ut.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ut.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ut.</li>
+                  <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, ut.</li>
+                </ul>
+              </div>
+            </div><hr>
+          </div> 
+         
+          
+          </div>
+          <div class="row">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <br><hr><br>
+              <button onclick="printResume()" style="background-color: #07525c;
+              color: white;" class="btn btn-primary mt-1" id="btnNoPrint" type="button">Print Resume</button>
+              <a href="create_generator.html" id="btnNoPrintGoBack" style="color: white;text-decoration: none;"><button style=" background-color: #07525c;
+              color: white;" class="btn btn-primary mt-1" id="btnNoPrintGoBack" type="button">Go back to Form<a href="create_generator.html"></button><a href="create_generator.html"></a>
+            </div>
+          </div>
+          </div>
+          
+          </div>
+        
+    <br>
+      </div>
+          
+      <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+header{
+    background-color: #b34040;
+    color: blanchedalmond;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding:1%;
+    width:100%;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+.logo{
+    font-size:2em;
+    color:white;
+    user-select: none;
+    margin-left: 4%;
+}
+a{
+    text-decoration: none;
+    font-size:1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left:40px;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    background-color: #07525c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.rememberForgot{
+    text-align: center;
+}
+.wrapper{
+position:relative;
+width:400px;
+height: 320px;
+background:transparent;
+border:2px solid #07525c;
+border-radius: 20px;
+justify-content: center;
+align-items: center;
+}
+
+label{
+    width:240px;
+    display:inline-block;
+    justify-content: center;
+
+}
+
+.myimg{
+    margin-top: 20%;
+}
+
+.card{
+    text-align: left;
+}
+
+.card-header{
+    text-align: center;
+}
+#cv-template{
+    border: 2px solid black;
+    margin-top: 50px;
+    background-color: white;
+    display: none;
+    width: 35cm;
+    height:38cm;
+    padding-left: 2%;
+}
